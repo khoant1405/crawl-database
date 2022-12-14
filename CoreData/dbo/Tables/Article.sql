@@ -17,12 +17,12 @@
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[Article]  ADD  CONSTRAINT [Fk_Article_CategoryId] FOREIGN KEY([CategoryId])
-REFERENCES [dbo].[Category] ([Id])
-GO
+--ALTER TABLE [dbo].[Article]  ADD  CONSTRAINT [Fk_Article_CategoryId] FOREIGN KEY([CategoryId])
+--REFERENCES [dbo].[Category] ([Id])
+--GO
 
-ALTER TABLE [dbo].[Article] CHECK CONSTRAINT [Fk_Article_CategoryId]
-GO
+--ALTER TABLE [dbo].[Article] CHECK CONSTRAINT [Fk_Article_CategoryId]
+--GO
 
 CREATE NONCLUSTERED INDEX [Nidx_Article_ArticleName] ON [dbo].[Article]
 (
