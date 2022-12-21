@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[Category](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[CategoryName] [nvarchar](500) NOT NULL,
-	[ParentId] [int] NOT NULL,
-	[UrlName] [nvarchar](500) NULL,
+	[ParentId] [int] NULL,
+	[UrlName] [nvarchar](500) NOT NULL,
  CONSTRAINT [Pk_Category_Id] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

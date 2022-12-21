@@ -2,12 +2,12 @@
 	[Id] [uniqueidentifier] NOT NULL,
 	[UserName] [nvarchar](max) NOT NULL,
 	[IsActive] [bit] NOT NULL,
-	[Role] [int] NOT NULL,
+	[Role] [int] NULL,
 	[PasswordHash] [varbinary](max) NOT NULL,
 	[PasswordSalt] [varbinary](max) NOT NULL,
-	[RefreshToken] [nvarchar](max) NOT NULL,
-	[TokenCreated] [datetime2](7) NOT NULL,
-	[TokenExpires] [datetime2](7) NOT NULL,
+	[RefreshToken] [nvarchar](max) NULL,
+	[TokenCreated] [datetime2](7) NULL,
+	[TokenExpires] [datetime2](7) NULL,
  CONSTRAINT [Pk_User_Id] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
