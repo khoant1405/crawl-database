@@ -1,17 +1,19 @@
-﻿CREATE TABLE [dbo].[User]
-(
+﻿CREATE TABLE [dbo].[User](
 	[Id] [uniqueidentifier] NOT NULL,
-	[FirstName] [nvarchar](100) NOT NULL,
-	[LastName] [nvarchar](100) NOT NULL,
-	[Email] [nvarchar](255) NOT NULL,
+	[UserName] [nvarchar](max) NOT NULL,
 	[IsActive] [bit] NOT NULL,
-	[Password] NVARCHAR(100) NOT NULL, 
-    CONSTRAINT [Pk_User_Id] PRIMARY KEY CLUSTERED 
+	[Role] [int] NOT NULL,
+	[PasswordHash] [varbinary](max) NOT NULL,
+	[PasswordSalt] [varbinary](max) NOT NULL,
+	[RefreshToken] [nvarchar](max) NOT NULL,
+	[TokenCreated] [datetime2](7) NOT NULL,
+	[TokenExpires] [datetime2](7) NOT NULL,
+ CONSTRAINT [Pk_User_Id] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[User] ADD  CONSTRAINT [Dv_User_IsActive] DEFAULT ((1)) FOR [IsActive]
+ALTER TABLE [dbo].[User] ADD  DEFAULT ((1)) FOR [IsActive]
 GO
