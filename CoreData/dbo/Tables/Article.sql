@@ -8,7 +8,7 @@
 	[ImageThumb] [nvarchar](255) NULL,
 	[Description] [nvarchar](500) NULL,
 	[CategoryId] [int] NOT NULL,
-	[IdDisplay] [int] NOT NULL,
+	[IdDisplay] [int] UNIQUE NOT NULL,
  CONSTRAINT [Pk_Article_Id] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
