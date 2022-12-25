@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Article](
-	[Id] [uniqueidentifier] NOT NULL,
+	[Id] INT NOT NULL,
 	[ArticleName] [nvarchar](500) NOT NULL,
 	[Status] [nvarchar](255) NOT NULL,
 	[CreationDate] [datetime2](7) NOT NULL,
@@ -8,7 +8,6 @@
 	[ImageThumb] [nvarchar](255) NULL,
 	[Description] [nvarchar](500) NULL,
 	[CategoryId] [int] NOT NULL,
-	[IdDisplay] [int] UNIQUE NOT NULL,
  CONSTRAINT [Pk_Article_Id] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
